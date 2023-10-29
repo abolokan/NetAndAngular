@@ -17,7 +17,7 @@ I created two separate projects
 ## 3. Choise the project Donkey.DAL in Package Manager Console and run &quot;Update-Database&quot;
 
 ## 4. Back App: run with IIS
-## 5. Front app: run npm i and npm start;
+## 5. Front App: run npm i and npm start;
 
 ## 6. Testing
 - Front app has tests for FileStorageService.ts
