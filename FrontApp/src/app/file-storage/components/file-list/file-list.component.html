@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="column">
+    <app-file-uploader></app-file-uploader>
+  </div>
+  <div class="column">
+    <div class="row" *ngFor="let extension of extensions; trackBy: trackByFn">
+      <h3>Files {{ extension.name}} </h3>
+      <app-file-storage [extensionId]="extension.id"></app-file-storage>
+    </div>
+  </div>
+</div>
+

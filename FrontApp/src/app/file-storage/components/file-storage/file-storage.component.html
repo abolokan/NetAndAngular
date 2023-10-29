@@ -1,0 +1,14 @@
+<div class="container">
+  <app-donkey-table
+    [showNoData]="showNoData"
+    [noDataText]="'Nothing found'"
+    [dataSource]="dataSource"
+    [pageSize]="pageSize"
+    [columns]="columns$ | async"
+    [order]="order"
+    [totalCount]="totalCount"
+    (sortEmit)="sort($event)"
+    (changePageEmit)="pageChange($event)"
+    (actionEmit)="onRowAction($event)">
+  </app-donkey-table>
+</div>

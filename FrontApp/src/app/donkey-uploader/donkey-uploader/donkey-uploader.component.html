@@ -1,0 +1,7 @@
+<button (click)="choseImportFile()">Choose</button>
+<input type="file"
+       hidden
+       #importFile
+       multiple
+       accept="{{ acceptableExtensions }}"
+       (change)="uploadFiles($event.target['files'])"/>

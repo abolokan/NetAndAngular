@@ -1,0 +1,48 @@
+<h1 *ngIf="showNoData"> {{ noDataText }}</h1>
+
+<ng-container *ngIf="!showNoData">
+
+  <mat-table [dataSource]="dataSource">
+    <ng-container *ngFor="let cell of columns;">
+      <ng-container matColumnDef="{{ cell.name }}" *ngIf="cell.name !== 'action'">
+        <mat-header-cell class="sort-header" *matHeaderCellDef (click)="sort(cell.name)">
+          {{ cell.header }}
+          <app-donkey-sort-table [fieldName]="cell.name" [orderField]="order?.field" [desc]="order?.desc"></app-donkey-sort-table>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element[cell.name] }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="{{ cell.name }}" *ngIf="cell.name === 'action'">
+        <mat-header-cell *matHeaderCellDef>
+          {{ cell.header }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container>
+            <ng-container *ngFor="let control of cell.controls; trackBy: trackByFn">
+              <ng-container [ngTemplateOutlet]="button" [ngTemplateOutletContext]="{ action: control, element: element }"></ng-container>
+            </ng-container>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns$ | async"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns$ | async"></mat-row>
+
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="pageSizeCounts$ | async"
+                 [length]="totalCount"
+                 (page)="pageChange($event)"
+                 showFirstLastButtons>
+  </mat-paginator>
+
+  <ng-template #button let-action="action" let-element="element">
+    <button mat-flat-button color="warn" (click)="emitActionRow(action.name, element)">
+      <mat-icon *ngIf="action.icon">{{ action.icon }}</mat-icon>
+      {{ action.name }}</button>
+  </ng-template>
+
+</ng-container>
