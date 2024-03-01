@@ -5,8 +5,8 @@ import {from, Observable, of} from 'rxjs';
 import {filter, map, toArray} from 'rxjs/operators';
 
 // material
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
+import {MatLegacyPaginator as MatPaginator, LegacyPageEvent as PageEvent} from '@angular/material/legacy-paginator';
 
 // enums
 import {RowAction} from '../../row-action.enum';

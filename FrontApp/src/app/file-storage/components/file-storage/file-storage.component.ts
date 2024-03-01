@@ -4,8 +4,8 @@ import {DatePipe} from '@angular/common';
 // libs
 import {Observable, of, Subject} from 'rxjs';
 import {filter, takeUntil} from 'rxjs/operators';
-import {MatPaginator, PageEvent} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import {MatLegacyPaginator as MatPaginator, LegacyPageEvent as PageEvent} from '@angular/material/legacy-paginator';
+import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
 
 // interfaces
 import {IFileInfo, IFileInfoFilter} from '../../interfaces';
