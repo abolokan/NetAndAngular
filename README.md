@@ -21,17 +21,22 @@ Add the following settings to your `appsettings.json` file in the .NET project:
     "FileStoragePath": "C:\\DonkeyFileStorage"
   }
 }
+```
 
+## 3. Apply Database Migrations
+- In Visual Studio, open the Package Manager Console, select the Donkey.DAL project, and run:
+  ```Update-Database```
 
-## 3. Choise the project Donkey.DAL in Package Manager Console and run &quot;Update-Database&quot;
-
-## 4. Back App 
-- run with IIS
+## 4. Run the Backend
+- Start the backend application using IIS.
   
-## 5. Front App
-- run npm i
-- npm start
+## 5. Run the Frontend
+- Navigate to the Angular project directory and run the following commands:
+```
+npm install
+npm start
+```
 
 ## 6. Testing
-- Front app has tests for FileStorageService.ts
-- Back app has tests for FileInfoService.cs
+- Frontend: The frontend application includes tests for FileStorageService.ts. Run the tests using:
+- Backend: The backend application includes tests for FileInfoService.cs. Run the tests using your preferred testing framework in Visual Studio.
