@@ -1,18 +1,27 @@
-# .Net and Angular apps 
+# .NET and Angular Applications
 
-I created two separate projects
+This repository contains two separate projects: a .NET backend and an Angular frontend.
 
-# Please do these steps to start:
+## Setup Instructions
 
-## 1. Create an empty DB
+Follow these steps to get the projects up and running:
 
-## 2. Provide these settings in the app.settings file
-&quot;ConnectionStrings&quot;: {
-&quot;DefaultConnection&quot;: &quot;Data Source=.;Initial Catalog=DonkeyDB;User ID=sa;Password=Qazwsx12&quot;
-},
-&quot;AppSettings&quot;: {
-&quot;FileStoragePath&quot;: &quot;C:\\DonkeyFileStorage&quot;
+### 1. Create an Empty Database
+Create an empty database in your SQL Server.
+
+### 2. Update the App Settings
+Add the following settings to your `appsettings.json` file in the .NET project:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=.;Initial Catalog=DonkeyDB;User ID=sa;Password=Qazwsx12"
+  },
+  "AppSettings": {
+    "FileStoragePath": "C:\\DonkeyFileStorage"
+  }
 }
+
 
 ## 3. Choise the project Donkey.DAL in Package Manager Console and run &quot;Update-Database&quot;
 
